@@ -1,1 +1,1 @@
-# Project-7-Advent-of-Code-2020
+Project 7 - Advent of Code - 2020
