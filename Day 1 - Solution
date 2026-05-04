@@ -1,0 +1,40 @@
+/*
+Advent of Code 2020 - Day 1
+
+Sources:
+Node.js docs: https://nodejs.org/docs/latest/api/
+Node fs docs: https://nodejs.org/docs/latest/api/fs.html
+MDN Node docs: https://developer.mozilla.org/en-US/docs/Web/API/Node
+MDN String trim: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+MDN String split: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+MDN Array map: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+MDN Number: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+*/
+
+const fs = require("fs");
+
+
+const input = fs.readFileSync(__dirname + "/input.txt", "utf8");
+
+
+const numbers = input.trim().split("\n").map(Number);
+
+
+for (let i = 0; i < numbers.length; i++) {
+  for (let j = i + 1; j < numbers.length; j++) {
+    if (numbers[i] + numbers[j] === 2020) {
+      console.log("Part 1:", numbers[i] * numbers[j]);
+    }
+  }
+}
+
+for (let i = 0; i < numbers.length; i++) {
+  for (let j = i + 1; j < numbers.length; j++) {
+    for (let k = j + 1; k < numbers.length; k++) {
+      if (numbers[i] + numbers[j] + numbers[k] === 2020) {
+        console.log("Part 2:", numbers[i] * numbers[j] * numbers[k]);
+      }
+    }
+  }
+}
